@@ -34,4 +34,17 @@ public class ClassroomTest {
     assertEquals(true, classroom.isFull());
   }
 
+  @Test
+  public void canMoveStudentsFromSchoolBusToClassroom() {
+    SchoolBus schoolBus = new SchoolBus(20);
+    for (int i = 0; i < 20; i++) {
+      schoolBus.addPassenger(student);
+    }
+
+    schoolBus.moveStudentsToClassroom(classroom);
+
+    assertEquals(0, schoolBus.countPassengers());
+    assertEquals(20, classroom.count());
+  }
+
 }

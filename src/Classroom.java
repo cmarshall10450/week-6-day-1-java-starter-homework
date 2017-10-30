@@ -2,8 +2,8 @@ public class Classroom {
 
   Student[] students;
 
-  public Classroom() {
-    this.students = new Student[30];
+  public Classroom(int capacity) {
+    this.students = new Student[capacity];
   }
 
   public int count() {
@@ -22,5 +22,9 @@ public class Classroom {
     }
 
     students[count()] = student;
+  }
+
+  public boolean isFull() {
+    return count() >= students.length;
   }
 }

@@ -15,4 +15,12 @@ public class Classroom {
     }
     return count;
   }
+
+  public void addStudent(Student student) {
+    if (count() == students.length) {
+      return;
+    }
+
+    students[count()] = student;
+  }
 }
